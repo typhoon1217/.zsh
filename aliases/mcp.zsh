@@ -2,7 +2,7 @@
 # Usage: Run these commands from any project directory
 
 # Core MCP project path
-export MCP_PROJECT_PATH="/home/jungwoo/Documents/ws/mcp-project-context"
+export MCP_PROJECT_PATH="$HOME/Documents/ws/mcp-project-context"
 
 # Index current project
 alias mcp-index='(cd $MCP_PROJECT_PATH && npm run index-codebase -- --path $(pwd))'
