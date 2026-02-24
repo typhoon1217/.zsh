@@ -70,14 +70,17 @@ wtr() {
         weather_refresh
     elif [[ "$1" == "-f" || "$1" == "--full" ]]; then
         curl -s "https://wttr.in/${WEATHER_LOCATION}"
+    elif [[ "$1" == "-t" || "$1" == "--two" ]]; then
+        curl -s "https://v2.wttr.in/${WEATHER_LOCATION:-Seoul}"
     elif [[ "$1" == "-h" || "$1" == "--help" ]]; then
         echo "Usage: wtr [option]"
-        echo "  -r, --refresh  Force refresh cache"
-        echo "  -f, --full     Show full weather report"
-        echo "  -h, --help     Show this help"
+        echo "  -r, --refresh    Force refresh cache"
+        echo "  -f, --full       Show full weather report"
+        echo "  -t, --two        Show v2.wttr.in weather"
+        echo "  -h, --help       Show this help"
         echo ""
         echo "Config vars (set in .zshrc before sourcing):"
-        echo "  WEATHER_LOCATION   City name (empty=auto)"
+        echo "  WEATHER_LOCATION   City name (empty=auto, v2 defaults to Seoul)"
         echo "  WEATHER_CACHE_TTL  Cache duration in seconds (default: 1800)"
     else
         show_weather
