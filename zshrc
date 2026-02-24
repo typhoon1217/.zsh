@@ -63,10 +63,10 @@ done
 
 source <(fzf --zsh)
 # Initialize starship prompt
-#eval "$(starship init zsh)" 
+eval "$(starship init zsh)"
 
-# Oh My Posh configuration
-eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/robbyrussell.omp.json)"
+# Oh My Posh configuration (disabled - using Starship instead)
+#eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/robbyrussell.omp.json)"
 
 # Fix Zenity Vulkan and GTK issues
 export GSK_RENDERER=cairo
@@ -74,4 +74,9 @@ export GTK_CSD=0
 export GDK_SCALE=1
 export NO_AT_BRIDGE=1
 export G_MESSAGES_DEBUG=""
+
+# # Tmux initialization
+# if [ -z "$TMUX" ]; then
+#     tmux attach-session -t default || tmux new-session -s default
+# fi
 
